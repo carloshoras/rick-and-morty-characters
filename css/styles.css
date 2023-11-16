@@ -77,5 +77,35 @@ ul {
   list-style: none;
 }
 
+/*---*/
+#character-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
+li {
+  width: 250px;
+  padding: 10px;
+  border: 1px rgb(224, 221, 221) solid;
+  border-radius: 5px;
+  margin: 10px;
+}
 
+img {
+  width: 100%;
+}
+
+.name, .species {
+  display: flex;
+}
+
+h4 {
+  font-weight: bold;
+}
+
+span {
+  padding-left: 3px;
+  font-size: 14px;
+  padding: 3px 0 0 2px;
+}
