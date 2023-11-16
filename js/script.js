@@ -12,24 +12,32 @@ function fetchFunction (pagina) {
         }
         return response.json()
     }).then((data) => {
+        personajes.innerHTML = ""
         data.results.forEach((personaje) => {
-            personajes.innerHTML += `<li><img src="${personaje.image}" alt="${personaje.name}" /><div class="name"><h4>Name:</h4><span>${personaje.name}</span></div><div class="species"><h4>Species:</h4><span>${personaje.species}</span></div></li>`
+            personajes.innerHTML += `
+            <li>
+                <img src="${personaje.image}" alt="${personaje.name}" />
+                <div class="name">
+                    <h4>Name:</h4>
+                    <span>${personaje.name}</span>
+                </div>
+                <div class="species">
+                    <h4>Species:</h4>
+                    <span>${personaje.species}</span>
+                </div>
+            </li>`
         })
     })  
 }
 
 nextButton.addEventListener('click', () => {
     if (pagina < 42) {
-        pagina += 1
-        personajes.innerHTML = ""
-        fetchFunction(pagina)
+        fetchFunction(pagina++)
     }
 })
 
 prevButton.addEventListener('click', () => {
     if (pagina > 1) {
-        pagina -= 1
-        personajes.innerHTML = ""
-        fetchFunction(pagina)
+        fetchFunction(pagina--)
     }
 })
